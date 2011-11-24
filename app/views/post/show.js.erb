@@ -1,0 +1,1 @@
+$('#news-view').append("<%= escape_javascript(render(:partial => "post/preview", :locals => {:next_posts => @posts})) %>");

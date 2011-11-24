@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eeveryday News|世界就在你身边，这一刻！ </title>
+    <%= stylesheet_link_tag 'bootstrap.min.css', :media=>'screen' %>
+    <%= stylesheet_link_tag 'global.css', :media=>'screen' %>
+    <%= javascript_include_tag 'jquery.min-1.5.1.js' %>
+    <%= javascript_include_tag 'application.js' %>
+    <%= csrf_meta_tag %>
+  </head>
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+    }
+  </style>
+  <body>
+
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Everyday News {新鲜时讯}</a>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <p class="pull-right">Logged in as <a href="#">username</a></p>
+        </div>
+      </div>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>

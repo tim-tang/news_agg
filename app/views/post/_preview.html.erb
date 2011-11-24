@@ -1,0 +1,11 @@
+<ul>
+  <% @posts.each do |post|%>
+    <li>
+    <div class="news-item">
+      <p><span><%= post.site_name%></span> - <span><%= post.published_at.strftime("%Y-%m-%d %A %H:%M:%S")%> | </span><span class="label warning"><%= post.category%></span> <p>
+      <h2><%= post.title%></h2>
+      <div class="hidden-id"><%= post.id%></div>
+    </div>
+    </li>
+  <% end %>
+</ul>
