@@ -1,14 +1,10 @@
-Capfile
-current
-releases/
-shared/
 config/rails_best_practices.yml
 config/database.yml
 rails_best_practices_output.html
 .bundle
 config/deploy.rb
 db/*.sqlite3
-public/system/
+public/html_contents/
 public/zh/
 public/en/
 log/

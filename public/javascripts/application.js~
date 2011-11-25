@@ -10,12 +10,13 @@ jQuery.extend({
     scrollPage:function(p, f){
         var n = c = t = h = new Number;
         $(function(){
-            $(window).scroll( function(e){
+            $(window).scroll(function(e){
                 if (n == p) { $(this).unbind("scroll"); }
                 c = document.documentElement.clientHeight;
                 t = $(document).scrollTop();
                 h = $(document).height();
-                if ( h - t - c == 0 ){
+                res=h - t - c
+                if ( res == 0 || res==1){
                     f();
                     if ( p > 0 ) n += 1;
                 }
@@ -40,32 +41,18 @@ function loadMore() {
 reentry = true;
     var lastItemID = $('.hidden-id:last').text();
     var scrollPos = $(document).scrollTop();
-    var catStr = '';
-    if (cat > 0)
-        catStr = "/" + cat;
 
     $.ajax({
-        url: "/post/index/" + lastItemID,
-        dataType: "html",
+        url: "/post/show/" + lastItemID,
+        dataType: "script",
         type: "GET",
         success: function (data) {
             if (data === undefined || data === null || data === "") {
                 //display warning
             } else {
-                $('#news-view').append(data);
+               // $('#news-view').append(data);
                 $('#loading_more').hide();
                 hookUpMouseEvent();
-
-                $('.news-item').map(function() {
-                    var node = this;
-                    var id = parseInt($('.hidden-id', node).text());
-                    var lastId = parseInt(lastItemID);
-                    if (id < lastId) {
-                        var url = $('.hidden-url', node).text();
-                        $('#invisible_preview').load("/content" + url);
-                    }
-                });
-                updateDate();
             }
         },
         complete: function (data) {
@@ -85,13 +72,63 @@ function hookUpMouseEvent() {
     $('.news-item').mouseenter(function() {
         this.style.backgroundColor='#FDFFBF';
         this.style.border='solid 1px #ddd';
-        $('.action-digg', this).css("color", '#77D3ED');
         var node = this;
     });
 
     $('.news-item').mouseleave(function() {
         this.style.backgroundColor='#fff';
         this.style.border='solid 1px #fff';
-        $('.action-digg', this).css("color", '#CCC');
     });
+}
+
+
+function newsClick(node) {
+    if (ie < 7.0 && ie > 0) {
+        var tmp = $("#top_band").outerHeight() - $(window).scrollTop();
+        $("#preview_wrapper").css("top", (tmp > 0 ? 0 : ($(window).scrollTop() - $("#top_band").outerHeight())) + 15 + "px");
+        $("#preview_wrapper").css('left', $("#main-wrapper").outerWidth() + 5 + 'px');
+        $("#preview_pannel").height((tmp > 0 ? ($(window).height() - tmp) : $(window).height()) - 90 - 30);
+        loadPreviewIE6("/html_contents" + $('.hidden-id', node).text(), function() {
+            //loadComments($('.hidden-id', node).text());
+        });
+    } else {
+        loadPreview("/html_contents" + $('.hidden-id', node).text(), function() {
+            //loadComments($('.hidden-id', node).text());
+        });
+    }
+}
+
+function loadPreview(query, loadComment){
+    //if (previewClosing) return;
+    if ($("#intro").is(':visible')) {
+        $("#preview_header").slideDown();
+        $("#preview_content").html("<div id='preview_loader' style='padding-top:" + ($("#preview_pannel").height() / 2 - 40 + "px") + "'><div class='preview_loader_title' style='display:block;height:65px;margin:0 auto;text-align:center;background:url(/images/ajax-loader.gif) no-repeat center bottom'>加载预览</div></div>");
+        $('#preview_content').load(query, function() {
+            $('#preview_pannel').scrollTop(0);            
+        });
+        $("#intro").css("background", "#d8d8d8");
+        $("#preview_wrapper").css("background", "#fff");
+        $("#intro").slideUp("slow", function() {
+            $("#preview_pannel").slideDown("slow", function() { loadComment(); });
+        });
+    } else {
+        $("#preview_content").html("<div id='preview_loader' style='padding-top:" + ($("#preview_pannel").height() / 2 - 40 + "px") + "'><div class='preview_loader_title' style='display:block;height:65px;margin:0 auto;text-align:center;background:url(/images/ajax-loader.gif) no-repeat center bottom'>加载预览</div></div>");
+        $('#preview_content').load(query, function() {
+            //addSpaceAtBottom();
+        });
+        $('#preview_pannel').scrollTop(0);
+        //loadComment();
+    }
+}
+
+
+function loadPreviewIE6(query, loadComment){
+    if (previewClosing) return;
+    $("#preview_header").slideDown();
+    $("#preview_content").html("<div id='preview_loader' style='padding-top:" + ($("#preview_pannel").height() / 2 - 40 + "px") + "'><div class='preview_loader_title' style='display:block;height:65px;margin:0 auto;text-align:center;background:url(/images/ajax-loader.gif) no-repeat center bottom'>加载预览</div></div>");
+    $('#preview_content').load(query, function() {
+        //$('#preview_content').append($('#content_ads').html());        
+    });
+    $('#preview_pannel').scrollTop(0);
+    $("#preview_pannel").slideDown("slow", function() { loadComment() });
 }

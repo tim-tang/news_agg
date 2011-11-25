@@ -1,8 +1,8 @@
 NewsAgg::Application.routes.draw do
-
+  root:to => "post#index"
   controller :post do
-    get "post/index"=>:index, :as => :index
-    get "post/show/:id"=>:show, :as => :show
+    get "show/:id"=>:show, :as => :show
+    get "category/:id"=>:category, :as => :category
   end
 
   # The priority is based upon order of creation:
