@@ -35,7 +35,7 @@ a{color:#404040;text-decoration:none;line-height:inherit;font-weight:inherit;}a:
 .row{zoom:1;margin-left:-20px;}.row:before,.row:after{display:table;content:"";zoom:1;}
 .row:after{clear:both;}
 .row>[class*="span"]{display:inline;float:left;margin-left:20px;}
-.span1{width:40px;}
+.span1{width:80px;height:60px;}
 .span2{width:100px;}
 .span3{width:160px;}
 .span4{width:220px;}

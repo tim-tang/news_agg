@@ -65,3 +65,9 @@
 .hidden-id {display:none}
 .hidden-cate {display:none}
 
+.nail {float:right;padding:0px 5px 0;width:80px;color: #CCC;text-align: center}
+.nail img{
+  margin-top: 0px;
+  -moz-box-shadow: 1px 1px 3px #184569 ;
+  -webkit-box-shadow: 1px 1px 3px #184569;
+  box-shadow: 1px 1px 3px #184569;}

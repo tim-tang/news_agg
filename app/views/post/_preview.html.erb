@@ -1,11 +1,19 @@
 <ul>
   <% @posts.each do |post|%>
     <li>
-     <div class="news-item" onclick="newsClick(this)">
-            <p><span><%= post.site_name%></span> - <span><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%> | </span>  <span class="label warning"><%= post.category%></span> | <span class="label"><%= link_to "[原文]", post.source, :target=>"_blank"%></span></p>
-            <h3><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%></h3>
-      <div class="hidden-id"><%= post.id%></div>
-    </div>
-    </li>
-  <% end %>
-</ul>
+    <div class="news-item" onclick="newsClick(this)">
+      <div>
+        <span><%= post.site_name%></span> -
+        <span><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></span> |
+        <span class="label warning"><%= post.category%></span> |
+        <span class="label"><%= link_to "[原文]", post.source, :target=>"_blank"%></span></p>
+        <div class="nail">
+          <img class="span1" src=<%=post.thumbnail%> />
+        </div>
+        <div>
+        <h3><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%></h3>
+        <div class="hidden-id"><%= post.id%></div>
+      </div>
+      </li>
+    <% end %>
+  </ul>

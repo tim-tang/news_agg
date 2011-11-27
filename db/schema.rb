@@ -10,11 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123021909) do
+ActiveRecord::Schema.define(:version => 20111127073845) do
 
   create_table "posts", :force => true do |t|
     t.string   "site_name"
     t.string   "title"
+    t.string   "thumbnail"
     t.string   "source"
     t.text     "content"
     t.string   "category"

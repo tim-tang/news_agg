@@ -1,8 +1,11 @@
+require 'crawler_engine'
 class PostController < ApplicationController
   before_filter :fetch_posts
   before_filter :fetch_categories, :only=>[:index,:category]
 
   def index
+    #CrawlerEngine.start
+    #@ce.start
     session[:page_num]=1
   end
 

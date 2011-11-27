@@ -9,6 +9,9 @@ gem 'mysql2'
 gem 'crawler-engine'
 gem 'will_paginate', '>= 3.0.pre'
 gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'nokogiri'
+gem 'simple-rss'
+gem 'rest-open-uri'
 
 # Use unicorn as the web server
 # gem 'unicorn'

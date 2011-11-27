@@ -8,22 +8,22 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 # ================= SINA.com =======================
- Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/world/focus15.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
- Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/china/focus15.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
- Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/society/focus15.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
+# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/world/focus15.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
+# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/china/focus15.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
+# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/society/focus15.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
 
- Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/finance/hot_roll.xml',:category=>'财经&股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
- Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/stock/hot_roll.xml',:category=>'财经&股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
+# Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/finance/hot_roll.xml',:category=>'财经&股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
+# Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/stock/hot_roll.xml',:category=>'财经&股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
 
- Source.create(:site_name=>'科技频道-新浪', :link=>'http://rss.sina.com.cn/tech/rollnews.xml',:category=>'科技&电子',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
+# Source.create(:site_name=>'科技频道-新浪', :link=>'http://rss.sina.com.cn/tech/rollnews.xml',:category=>'科技&电子',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
 
 # # ================= 163.com =======================
- Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gn.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
- Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gj.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
- Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_war.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
- Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_sh.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
- Source.create(:site_name=>'网易科技', :link=>'http://tech.163.com/special/000944OI/headlines.xml',:category=>'科技&电子',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
- Source.create(:site_name=>'网易科技', :link=>'http://tech.163.com/special/000944OI/kejiyejie.xml',:category=>'科技&电子',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gn.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gj.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_war.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_sh.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易科技', :link=>'http://tech.163.com/special/000944OI/headlines.xml',:category=>'科技&电子',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易科技', :link=>'http://tech.163.com/special/000944OI/kejiyejie.xml',:category=>'科技&电子',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
 
  # ================= ifeng.com =====================
  Source.create(:site_name=>'凤凰网', :link=>'http://news.ifeng.com/rss/world.xml',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="artical_real"]')
@@ -43,7 +43,7 @@
  Source.create(:site_name=>'瘾科技', :link=>'http://cn.engadget.com/rss.xml',:category=>'科技&电子',:crawled_at=>Time.now, :filter=>'//div[@class="postbody"]')
 
 # # =============== 21 ccom==================
- Source.create(:site_name=>'共识网', :link=>'http://www.21ccom.net/plus/rss.php',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="contents"]')
+# Source.create(:site_name=>'共识网', :link=>'http://www.21ccom.net/plus/rss.php',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="contents"]')
 
 # # =============== yeeyan-tech ==================
  Source.create(:site_name=>'译言网', :link=>'http://feed.feedsky.com/yeeyan-culture',:category=>'时政&社会',:crawled_at=>Time.now, :filter=>'//div[@id="conBox"]')
