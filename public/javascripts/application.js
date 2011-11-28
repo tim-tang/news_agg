@@ -39,11 +39,12 @@ function startLoadMore() {
 
 function loadMore() {
   reentry = true;
-  var lastItemID = $('.hidden-cate').text();
+  var lastItemID = $('.hidden-id:last').text();
+  var categoryID = $('.hidden-cate').text();
   var scrollPos = $(document).scrollTop();
 
   $.ajax({
-    url: "/show/" + lastItemID,
+    url: "/show/" + categoryID+"&"+lastItemID,
     dataType: "script",
     type: "GET",
     success: function (data) {

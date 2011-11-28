@@ -1,33 +1,28 @@
 require 'crawler_engine'
 class PostController < ApplicationController
-  before_filter :fetch_posts
   before_filter :fetch_categories, :only=>[:index,:category]
 
   def index
-    #CrawlerEngine.start
-    #@ce.start
-    session[:page_num]=1
+    session[:category]=0
+    @posts = Post.find_by_sql("select * from posts order by published_at desc limit 10 ")
   end
 
   def show
-    session[:page_num]+=1
-  end
-
-  def category
-    session[:page_num]=1
-  end
-
-  private
-  def fetch_posts
-    if params[:id]==nil || params[:id].to_s == "0"
-      session[:category]=0
-      @posts = Post.paginate :page=>session[:page_num], :per_page=>10, :order=>'published_at desc'
+    arry=params[:id].split("&")
+    if arry[0].to_s=="0"
+      @posts = Post.find_by_sql("select * from posts where published_at < '#{arry[1]}' order by published_at desc limit 10 ")
     else
-      session[:category]=params[:id]
-      @posts = Post.paginate :conditions=>['category = ?', params[:id]], :page=>session[:page_num], :per_page=>10, :order=>'published_at desc'
+      session[:category]=arry[0]
+      @posts = Post.find_by_sql("select * from posts where published_at < '#{arry[1]}' and category='#{arry[0]}' order by published_at desc limit 10 ")
     end
   end
 
+  def category
+    session[:category]=params[:id]
+    @posts = Post.find_by_sql("select * from posts where category='#{session[:category]}' order by published_at desc limit 10 ")
+  end
+
+  private
   def fetch_categories
     @categories = Source.select("DISTINCT(category)")
   end

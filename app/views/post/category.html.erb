@@ -16,7 +16,7 @@
              </div>
             </div>
             <h3><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%></h3>
-            <div class="hidden-id"><%= post.id%></div>
+            <div class="hidden-id"><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></div>
           </div>
           </li>
         <% end %>
