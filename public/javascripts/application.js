@@ -39,7 +39,7 @@ function startLoadMore() {
 
 function loadMore() {
   reentry = true;
-  var lastItemID = $('.hidden-id:last').text();
+  var lastItemID = $('.hidden-time:last').text();
   var categoryID = $('.hidden-cate').text();
   var scrollPos = $(document).scrollTop();
 

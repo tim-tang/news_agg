@@ -1,17 +1,17 @@
 <% @posts.each do |post|%>
   <div class="news-item" onclick="newsClick(this)">
-    <div>
-      <span><%= post.site_name%></span> -
+    <div class="news-submit">
+      <%= image_tag"news_icon.gif", :align=>"absmiddle", :class=>"favicon"%><span class="label"><%= post.site_name%></span> -
       <span><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></span> |
-      <span class="label warning"><%= post.category%></span> |
-      <span class="label"><%= link_to "[原文]", post.source, :target=>"_blank"%></span>
+      <span class="label warning"><%= post.category%></span>
       <div class="nail">
         <img class="span1" src=<%=post.thumbnail%> />
       </div>
     </div>
     <div>
-      <h2><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%></h2>
-      <div class="hidden-id"><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></div>
+      <h2><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%> <%= link_to "[原文]", post.source,:class=>'origin', :target=>"_blank"%></h2>
+      <div class="hidden-id"><%= post.id%></div>
+      <div class="hidden-time"><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></div>
     </div>
   </div>
 <% end %>
