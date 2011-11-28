@@ -2,9 +2,7 @@
   <div class="sidebar">
     <div class="hidden-cate"><%= session[:category]%></div>
     <div id="news-view" class="well">
-      <ul>
         <% @posts.each do |post|%>
-          <li>
           <div class="news-item" onclick="newsClick(this)">
             <div>
               <span><%= post.site_name%></span> -
@@ -15,12 +13,10 @@
                 <img class="span1" src=<%=post.thumbnail%> />
              </div>
             </div>
-            <h3><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%></h3>
+            <h2><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%></h2>
             <div class="hidden-id"><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></div>
           </div>
-          </li>
         <% end %>
-      </ul>
     </div>
     <div style="width:100%;height:70px;">
       <div id="loading_more" class="more_loader"><%= image_tag('ajax-loader.gif')%> 正在加载更多新闻...</div>
