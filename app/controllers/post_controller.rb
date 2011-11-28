@@ -3,6 +3,7 @@ class PostController < ApplicationController
   before_filter :fetch_categories, :only=>[:index,:category]
 
   def index
+    #CrawlerEngine.start
     session[:category]=0
     @posts = Post.find_by_sql("select * from posts order by published_at desc limit 10 ")
   end

@@ -64,8 +64,10 @@
 
 
 .hidden-id {display:none}
+.hidden-title {display:none}
 .hidden-cate {display:none}
 .hidden-time{display:none}
+.hidden-time2{display:none}
 
 .nail {float:right;padding:0px 5px 0;width:80px;color: #CCC;text-align: center}
 .nail img{

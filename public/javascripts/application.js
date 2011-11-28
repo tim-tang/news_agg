@@ -83,7 +83,8 @@ function hookUpMouseEvent() {
 
 
 function newsClick(node) {
-  loadPreview("/html_contents/" + $('.hidden-id', node).text(), function() {
+  //alert("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html");
+  loadPreview("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html", function() {
   });
 }
 
