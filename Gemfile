@@ -12,6 +12,7 @@ gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'nokogiri'
 gem 'simple-rss'
 gem 'rest-open-uri'
+gem 'whenever'
 
 # Use unicorn as the web server
 # gem 'unicorn'

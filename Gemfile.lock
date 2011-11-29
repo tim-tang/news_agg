@@ -31,6 +31,7 @@ GEM
     archive-tar-minitar (0.5.2)
     arel (2.0.10)
     builder (2.1.2)
+    chronic (0.6.5)
     columnize (0.3.4)
     crawler-engine (0.1.0)
       rails
@@ -84,6 +85,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
+    whenever (0.7.0)
+      activesupport (>= 2.3.4)
+      chronic (~> 0.6.3)
     will_paginate (3.0.2)
 
 PLATFORMS
@@ -97,4 +101,5 @@ DEPENDENCIES
   rest-open-uri
   ruby-debug19
   simple-rss
+  whenever
   will_paginate (>= 3.0.pre)
