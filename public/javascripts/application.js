@@ -109,6 +109,9 @@ function hookUpMouseEvent() {
 
 
 function newsClick(node) {
+  $("#intro").hide();
+  $("#preview_pannel").show();
+  $("#preview_header").show();
   //alert(encodeURI("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html"));
   loadPreview("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html", function() {
   });
