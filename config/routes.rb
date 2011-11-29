@@ -2,6 +2,7 @@ NewsAgg::Application.routes.draw do
   root:to => "post#index"
   controller :post do
     get "show/:id"=>:show, :as => :show
+    get "show_latest/:id"=>:show_latest, :as => :show_latest
     get "category/:id"=>:category, :as => :category
   end
 

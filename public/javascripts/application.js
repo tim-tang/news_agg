@@ -68,6 +68,32 @@ function loadMore() {
   });
 }
 
+function loadNew(manual) {
+  var lastItemID = $('.hidden-time:first').text();
+  var categoryID = $('.hidden-cate').text();
+    if (manual) $('#refreshing').show();
+
+    $.ajax({
+        url: "/show_latest/"+ categoryID+"&"+lastItemID,
+        dataType: "script",
+        type: "GET",
+        success: function (data) {
+            if (data === undefined || data === null || data == "" || data == " ") {
+                //display warning
+            } else {
+                //$('.source-title-header:first').after(data);
+                hookUpMouseEvent();
+            }
+        },
+        complete: function() {$('#refreshing').hide();$('#refresh_time').text('上次更新: ' + getDateStr())}
+    });
+}
+
+function getDateStr() {
+    var now = new Date();
+    return (now.getHours() > 9 ? now.getHours() : ('0' + now.getHours())) + ":" + (now.getMinutes() > 9 ? now.getMinutes() : ('0' + now.getMinutes()));
+}
+
 function hookUpMouseEvent() {
   $('.news-item').mouseenter(function() {
     this.style.backgroundColor='#FDFFBF';
@@ -83,7 +109,7 @@ function hookUpMouseEvent() {
 
 
 function newsClick(node) {
-  //alert("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html");
+  //alert(encodeURI("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html"));
   loadPreview("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html", function() {
   });
 }

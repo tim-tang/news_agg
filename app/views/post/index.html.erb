@@ -1,25 +1,35 @@
 <div class="container-fluid">
+
+
   <div class="sidebar">
+    <div id="news-update" class="well">
+      <p class="source-title-header">
+        <span id="refresh_time" class="label notice", style="float:left;">上次更新: <%= Time.new.strftime("%H:%M")%></span>
+        <span id="refreshing" style="float:left;display:none;font-size:16px;"><%= image_tag('ajax-loader.gif', :align=>"absmiddle")%> 加载最新新闻...</span>
+        <span><a href="javascript:loadNew(1)">正在发生</a></span>
+      </p>
+    </div>
+
     <div class="hidden-cate"><%= session[:category]%></div>
     <div id="news-view" class="well">
-        <% @posts.each do |post|%>
-          <div class="news-item" onclick="newsClick(this)">
-            <div class="news-submit">
-              <%= image_tag"news_icon.gif", :align=>"absmiddle", :class=>"favicon"%><span class="label"><%= post.site_name%></span> -
-              <span><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></span> |
-              <span class="label warning"><%= post.category%></span>
-              <div class="nail">
-                <img class="span1" src=<%=post.thumbnail%> />
-             </div>
+      <% @posts.each do |post|%>
+        <div class="news-item" onclick="newsClick(this)">
+          <div class="news-submit">
+            <%= image_tag"news_icon.gif", :align=>"absmiddle", :class=>"favicon"%><span class="label"><%= post.site_name%></span> -
+            <span><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></span> |
+            <span class="label warning"><%= post.category%></span>
+            <div class="nail">
+              <img class="span1" src=<%=post.thumbnail%> />
             </div>
-
-            <h2><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%> <%= link_to "[原文]", post.source,:class=>'origin', :target=>"_blank"%></h2>
-            <div class="hidden-id"><%= post.id%></div>
-            <div class="hidden-title"><%= post.title%></div>
-            <div class="hidden-time"><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></div>
-            <div class="hidden-time2"><%= post.published_at.strftime("%Y%m%d")%></div>
           </div>
-        <% end %>
+
+          <h2><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%> <%= link_to "[原文]", post.source,:class=>'origin', :target=>"_blank"%></h2>
+          <div class="hidden-id"><%= post.id%></div>
+          <div class="hidden-title"><%= post.title%></div>
+          <div class="hidden-time"><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></div>
+          <div class="hidden-time2"><%= post.published_at.strftime("%Y%m%d")%></div>
+        </div>
+      <% end %>
     </div>
     <div style="width:100%;height:70px;">
       <div id="loading_more" class="more_loader"><%= image_tag('ajax-loader.gif')%> 正在加载更多新闻...</div>

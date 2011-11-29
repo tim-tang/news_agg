@@ -1,5 +1,12 @@
 <div class="container-fluid">
   <div class="sidebar">
+    <div id="news-update" class="well">
+      <p class="source-title-header">
+        <span id="refresh_time" class="label notice", style="float:left;">上次更新: <%= Time.new.strftime("%H:%M")%></span>
+        <span id="refreshing" style="float:left;display:none;font-size:16px;"><%= image_tag('ajax-loader.gif', :align=>"absmiddle")%> 加载最新新闻...</span>
+        <span><a href="javascript:loadNew(1)">正在发生</a></span>
+      </p>
+    </div>
     <div class="hidden-cate"><%= session[:category]%></div>
     <div id="news-view" class="well">
         <% @posts.each do |post|%>

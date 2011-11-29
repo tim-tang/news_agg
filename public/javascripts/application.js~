@@ -1,134 +1,123 @@
 /*
- define funtion to exec when scroll to page bottom
- Param:
- data(Number) -1:一直翻页; 0:不翻页; n:翻n页
- fn(Function) 当滚动条拖到底部时要执行的函数
- */
+   define funtion to exec when scroll to page bottom
+   Param:
+   data(Number) -1:一直翻页; 0:不翻页; n:翻n页
+   fn(Function) 当滚动条拖到底部时要执行的函数
+   */
 var ie = -1;
 
 jQuery.extend({
-    scrollPage:function(p, f){
-        var n = c = t = h = new Number;
-        $(function(){
-            $(window).scroll(function(e){
-                if (n == p) { $(this).unbind("scroll"); }
-                c = document.documentElement.clientHeight;
-                t = $(document).scrollTop();
-                h = $(document).height();
-                res=h - t - c
-                if ( res == 0 || res==1){
-                    f();
-                    if ( p > 0 ) n += 1;
-                }
-            });
-        });
-    }
+  scrollPage:function(p, f){
+               var n = c = t = h = new Number;
+               $(function(){
+                 $(window).scroll(function(e){
+                   if (n == p) { $(this).unbind("scroll"); }
+                   c = document.documentElement.clientHeight;
+                   t = $(document).scrollTop();
+                   h = $(document).height();
+                   res=h - t - c
+                   if ( res == 0 || res==1){
+                     f();
+                     if ( p > 0 ) n += 1;
+                   }
+                 });
+               });
+             }
 });
 
 var reentry = false;
 $.scrollPage(-1, function(){
-    startLoadMore();
+  startLoadMore();
 });
 
 function startLoadMore() {
-    if (!reentry) {
-        $('#loading_more').show();
-        loadMore();
-    }
+  if (!reentry) {
+    $('#loading_more').show();
+    loadMore();
+  }
 }
 
 function loadMore() {
-reentry = true;
-    var lastItemID = $('.hidden-id:last').text();
-    var scrollPos = $(document).scrollTop();
+  reentry = true;
+  var lastItemID = $('.hidden-time:last').text();
+  var categoryID = $('.hidden-cate').text();
+  var scrollPos = $(document).scrollTop();
 
+  $.ajax({
+    url: "/show/" + categoryID+"&"+lastItemID,
+    dataType: "script",
+    type: "GET",
+    success: function (data) {
+      if (data === undefined || data === null || data === "") {
+        //display warning
+      } else {
+        $('#loading_more').hide();
+        hookUpMouseEvent();
+      }
+    },
+    complete: function (data) {
+                if (ie >= 7 && ie < 9) {
+                  window.setTimeout(function() {
+                    $(document).scrollTop(scrollPos);
+                    reentry = false;
+                  }, 10);
+                } else {
+                  reentry = false;
+                }
+              }
+  });
+}
+
+function loadNew(manual) {
+  var lastItemID = $('.hidden-time:first').text();
+  var categoryID = $('.hidden-cate').text();
+alert(lastItemID);
+    if (manual) $('#refreshing').show();
+    
     $.ajax({
-        url: "/post/show/" + lastItemID,
+        url: "/news/new_page/"+ categoryID+"&"+lastItemID,
         dataType: "script",
         type: "GET",
         success: function (data) {
-            if (data === undefined || data === null || data === "") {
+            if (data === undefined || data === null || data == "" || data == " ") {
                 //display warning
             } else {
-               // $('#news-view').append(data);
-                $('#loading_more').hide();
+                //$('.source-title-header:first').after(data);
                 hookUpMouseEvent();
             }
         },
-        complete: function (data) {
-            if (ie >= 7 && ie < 9) {
-                window.setTimeout(function() {
-                    $(document).scrollTop(scrollPos);
-                    reentry = false;
-                }, 10);
-            } else {
-                reentry = false;
-            }
-        }
+        complete: function() {$('#refreshing').hide();$('#refresh_time').text('上次更新: ' + getDateStr())}
     });
 }
 
-function hookUpMouseEvent() {
-    $('.news-item').mouseenter(function() {
-        this.style.backgroundColor='#FDFFBF';
-        this.style.border='solid 1px #ddd';
-        var node = this;
-    });
+function getDateStr() {
+    var now = new Date();
+    return (now.getHours() > 9 ? now.getHours() : ('0' + now.getHours())) + ":" + (now.getMinutes() > 9 ? now.getMinutes() : ('0' + now.getMinutes()));
+}
 
-    $('.news-item').mouseleave(function() {
-        this.style.backgroundColor='#fff';
-        this.style.border='solid 1px #fff';
-    });
+function hookUpMouseEvent() {
+  $('.news-item').mouseenter(function() {
+    this.style.backgroundColor='#FDFFBF';
+    this.style.border='solid 1px #ddd';
+    var node = this;
+  });
+
+  $('.news-item').mouseleave(function() {
+    this.style.backgroundColor='#fff';
+    this.style.border='solid 1px #fff';
+  });
 }
 
 
 function newsClick(node) {
-    if (ie < 7.0 && ie > 0) {
-        var tmp = $("#top_band").outerHeight() - $(window).scrollTop();
-        $("#preview_wrapper").css("top", (tmp > 0 ? 0 : ($(window).scrollTop() - $("#top_band").outerHeight())) + 15 + "px");
-        $("#preview_wrapper").css('left', $("#main-wrapper").outerWidth() + 5 + 'px');
-        $("#preview_pannel").height((tmp > 0 ? ($(window).height() - tmp) : $(window).height()) - 90 - 30);
-        loadPreviewIE6("/html_contents" + $('.hidden-id', node).text(), function() {
-            //loadComments($('.hidden-id', node).text());
-        });
-    } else {
-        loadPreview("/html_contents" + $('.hidden-id', node).text(), function() {
-            //loadComments($('.hidden-id', node).text());
-        });
-    }
+  //alert(encodeURI("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html"));
+  loadPreview("/html_contents/"+$('.hidden-time2', node).text()+"/"+ $('.hidden-title', node).text()+".html", function() {
+  });
 }
 
 function loadPreview(query, loadComment){
-    //if (previewClosing) return;
-    if ($("#intro").is(':visible')) {
-        $("#preview_header").slideDown();
-        $("#preview_content").html("<div id='preview_loader' style='padding-top:" + ($("#preview_pannel").height() / 2 - 40 + "px") + "'><div class='preview_loader_title' style='display:block;height:65px;margin:0 auto;text-align:center;background:url(/images/ajax-loader.gif) no-repeat center bottom'>加载预览</div></div>");
-        $('#preview_content').load(query, function() {
-            $('#preview_pannel').scrollTop(0);            
-        });
-        $("#intro").css("background", "#d8d8d8");
-        $("#preview_wrapper").css("background", "#fff");
-        $("#intro").slideUp("slow", function() {
-            $("#preview_pannel").slideDown("slow", function() { loadComment(); });
-        });
-    } else {
-        $("#preview_content").html("<div id='preview_loader' style='padding-top:" + ($("#preview_pannel").height() / 2 - 40 + "px") + "'><div class='preview_loader_title' style='display:block;height:65px;margin:0 auto;text-align:center;background:url(/images/ajax-loader.gif) no-repeat center bottom'>加载预览</div></div>");
-        $('#preview_content').load(query, function() {
-            //addSpaceAtBottom();
-        });
-        $('#preview_pannel').scrollTop(0);
-        //loadComment();
-    }
-}
-
-
-function loadPreviewIE6(query, loadComment){
-    if (previewClosing) return;
-    $("#preview_header").slideDown();
-    $("#preview_content").html("<div id='preview_loader' style='padding-top:" + ($("#preview_pannel").height() / 2 - 40 + "px") + "'><div class='preview_loader_title' style='display:block;height:65px;margin:0 auto;text-align:center;background:url(/images/ajax-loader.gif) no-repeat center bottom'>加载预览</div></div>");
-    $('#preview_content').load(query, function() {
-        //$('#preview_content').append($('#content_ads').html());        
-    });
-    $('#preview_pannel').scrollTop(0);
-    $("#preview_pannel").slideDown("slow", function() { loadComment() });
+  $("#preview_content").html("<div id='preview_loader' style='padding-top:" + ($("#preview_pannel").height() / 2 - 40 + "px") + "'><div class='preview_loader_title' style='display:block;height:65px;margin:0 auto;text-align:center;background:url(/images/ajax-loader.gif) no-repeat center bottom'>加载预览</div></div>");
+  $('#preview_content').load(query, function() {
+  });
+  $('#preview_pannel').scrollTop(0);
 }
