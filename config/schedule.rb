@@ -8,7 +8,7 @@
 # set :output, "/path/to/my/cron_log.log"
 #
 #require "crawler_engine"
-every 2.minute do
+every 20.minute do
   #command "rake crawler_start"
   #runner "CrawlerEngine.start"
   rake "crawler_start"

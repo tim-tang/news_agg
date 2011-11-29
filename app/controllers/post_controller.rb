@@ -21,10 +21,10 @@ class PostController < ApplicationController
   def show_latest
     arry=params[:id].split("&")
     if arry[0].to_s=="0"
-      @posts = Post.find_by_sql("select * from posts where published_at < '#{arry[1]}' order by published_at desc")
+      @posts = Post.find_by_sql("select * from posts where published_at > '#{arry[1]}' order by published_at desc")
     else
       session[:category]=arry[0]
-      @posts = Post.find_by_sql("select * from posts where published_at < '#{arry[1]}' and category='#{arry[0]}' order by published_at desc")
+      @posts = Post.find_by_sql("select * from posts where published_at > '#{arry[1]}' and category='#{arry[0]}' order by published_at desc")
     end
   end
 

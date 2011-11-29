@@ -51,3 +51,8 @@
  Source.create(:site_name=>'译言网', :link=>'http://feed.feedsky.com/yeeyan-business',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@id="conBox"]')
  Source.create(:site_name=>'译言网', :link=>'http://feed.feedsky.com/yeeyan-tech',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@id="conBox"]')
 
+# # =============== rayli ==================
+# Source.create(:site_name=>'瑞丽网', :link=>'http://www.rayli.com.cn/rss/0002.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@id="conBox"]')
+
+
+
