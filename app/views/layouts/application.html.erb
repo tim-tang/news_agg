@@ -6,32 +6,54 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <%= stylesheet_link_tag 'bootstrap.min.css', :media=>'screen' %>
     <%= stylesheet_link_tag 'global.css', :media=>'screen' %>
+    <%= stylesheet_link_tag 'jflow.css', :media=>'screen' %>
     <%= javascript_include_tag 'jquery.min-1.5.1.js' %>
     <%= javascript_include_tag 'application.js' %>
+    <%= javascript_include_tag 'jflow.js' %>
     <%= csrf_meta_tag %>
-  </head>
-  <style type="text/css">
-    body {
-      padding-top: 60px;
-    }
-  </style>
-  <body>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $("#myController").jFlow({
+controller: ".jFlowControl", // must be class, use . sign
+slideWrapper : "#jFlowSlider", // must be id, use # sign
+slides: "#mySlides",  // the div where all your sliding divs are nested in
+selectedWrapper: "jFlowSelected",  // just pure text, no sign
+effect: "flow", //this is the slide effect (rewind or flow)
+width: "100%",  // this is the width for the content-slider
+height: "300px",  // this is the height for the content-slider
+duration: 400,  // time in milliseconds to transition one slide
+pause: 500, //time between transitions
+prev: ".jFlowPrev", // must be class, use . sign
+next: ".jFlowNext", // must be class, use . sign
+auto: true
+});
 
-    <div class="topbar">
-      <div class="topbar-inner">
-        <div class="container-fluid">
-          <%= link_to 'Everyday News {新鲜时讯}', root_path, :class=>"brand" %>
-          <ul class="nav">
-            <li class="active"><%= link_to "主页", root_path%></li>
-            <% @categories.each do |cate|%>
-              <li><%= link_to cate.category, category_path(cate.category)%></li>
-            <% end %>
-          </ul>
-          <p class="pull-right"><a href="http://tim.everyday-cn.com">联系我们</a></p>
+hookUpMouseEvent();
+          });
+        </script>
+      </head>
+      <style type="text/css">
+        body {
+          padding-top: 60px;
+        }
+      </style>
+      <body>
+
+        <div class="topbar">
+          <div class="topbar-inner">
+            <div class="container-fluid">
+              <%= link_to 'Everyday News {新鲜时讯}', root_path, :class=>"brand" %>
+              <ul class="nav">
+                <li class="active"><%= link_to "主页", root_path%></li>
+                <% @categories.each do |cate|%>
+                  <li><%= link_to cate.category, category_path(cate.category)%></li>
+                <% end %>
+              </ul>
+              <p class="pull-right"><a href="http://tim.everyday-cn.com">联系我们</a></p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <%= yield %>
-  </body>
-</html>
+        <%= yield %>
+      </body>
+    </html>

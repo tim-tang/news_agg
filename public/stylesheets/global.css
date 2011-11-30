@@ -24,7 +24,7 @@
 }
 
 .preview_header {
-  width:760px;
+  width:700px;
   height:22px;
   position:;
   color:#f8f8f8;
@@ -44,7 +44,7 @@
 }
 
 .preview_pannel {
-  width:760px;
+  width:700px;
   height:700px;
   position:fixed;
   overflow-y:scroll;
@@ -126,7 +126,7 @@ div#intro {top:100px;width:100%;
 }
 div#intro-wrapper {
   margin:0 0 0 auto;
-  width:760px;
+  width:700px;
   height:700px;
 }
 #lower_intro {position:absolute;bottom:25px;margin-right:5px;margin-left:10px;clear:both;padding-left:0}

@@ -1,0 +1,102 @@
+#slide_container {
+  padding-top: 30px;
+  width: 385px;
+  height: 217px;
+  position: relative;
+  cursor: pointer;
+  background-color:#f6f6f6
+}
+
+div#mySlides div span {
+  background: url("../images/contentBg.png") repeat top left transparent;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  padding: 7px 10px;
+}
+
+#mySlides div h3 {
+  font-family: Georgia, serif;
+  color: #FFF;
+  font-size: 35px;
+  font-style: italic;
+  margin: 0 0 10px 10px;
+}
+
+#mySlides div span p{
+  font-family: "微软雅黑","Trebuchet MS", Verdana, "Comic Sans MS", sans-serif;
+  color: #FFF;
+  font-size:20px;
+  line-height:30px;
+  margin: 0;
+}
+
+#mySlides div span p:hover {color:#F90;}
+
+.jFlowSlideContainer a {
+  text-decoration: none;
+  font-style: italic;
+  font-size:30px;
+}
+
+.jFlowSlideContainer a:hover {
+  color: #FFF;
+  text-decoration: none;
+  border-bottom: 1px dotted white;
+}
+
+.jFlowSlideContainer a:focus {
+  position: relative;
+  top: 1px;
+}
+
+.jFlowSlideContainer .count {
+  color: #fff;
+  font-size:13px;
+  font-weight:normal;
+}
+
+.jFlowNext div {
+  background:url("../images/fnext.png") no-repeat scroll -50px -50px transparent;
+  height:130px;
+  position:absolute;
+  top:10px;
+  right: 10px;
+  width:80px;
+  cursor:pointer;
+}
+
+
+.jFlowPrev div {
+  background:url("../images/fprev.png") no-repeat scroll -50px -50px transparent;
+  height:130px;
+  position:absolute;
+  top:10px;
+  left: 10px;
+  width:80px;
+  cursor:pointer;
+}
+
+.jFlowPrev div:hover {
+  background:transparent url("../images/fprev.png") no-repeat left center;
+}
+
+.jFlowNext div:hover {
+  background:transparent url("../images/fnext.png") no-repeat right center;
+}
+
+.slide{
+
+}
+
+.slide img{
+  -moz-box-shadow:1px 1px 5px #184569;
+  -o-box-shadow:1px 1px 5px #184569;
+  -webkit-box-shadow:1px 1px 5px #184569;
+  box-shadow:1px 1px 5px #184569;
+  background-color: #e8e8e8;
+  border: solid 5px #ddd;
+  margin:80px 0 0 60px;
+  width:580px;
+  height:470px;
+}
