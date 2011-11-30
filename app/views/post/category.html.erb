@@ -16,7 +16,9 @@
             <span><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></span> |
             <span class="label warning"><%= post.category%></span>
             <div class="nail">
-              <img class="span1" src=<%=post.thumbnail%> />
+              <% if post.thumbnail != nil%>
+              <%= image_tag post.thumbnail, :class=>"span1" %>
+            <% end %>
             </div>
           </div>
           <h2><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode);return false"%> <%= link_to "[原文]", post.source,:class=>'origin', :target=>"_blank"%></h2>

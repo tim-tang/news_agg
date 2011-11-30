@@ -19,7 +19,9 @@
             <span><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></span> |
             <span class="label warning"><%= post.category%></span>
             <div class="nail">
-              <img class="span1" src=<%=post.thumbnail%> />
+              <% if post.thumbnail != nil%>
+                <img class="span1" src="html_contents/<%= post.published_at.strftime("%Y%m%d")%>/<%=post.id%>.png" />
+              <% end %>
             </div>
           </div>
 
@@ -62,25 +64,25 @@
         <div id="sliderContainer">
           <div id="mySlides">
 
-           <% @posts.each do |post|%>
-             <% if post.thumbnail!= nil%>
-             <div id="slide<% post.id%>" class="slide">
-             <div class="hidden-id"><%= post.id%></div>
-             <div class="hidden-time2"><%= post.published_at.strftime("%Y%m%d")%></div>
-              <%= image_tag post.thumbnail%>
-              <div class="slideContent">
-                <h3><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode.parentNode.parentNode);return false"%></h3>
-              </div>
-            </div>
-          <% end %>
-          <% end %>
+            <% @posts.each do |post|%>
+              <% if post.thumbnail!= nil%>
+                <div id="slide<% post.id%>" class="slide">
+                  <div class="hidden-id"><%= post.id%></div>
+                  <div class="hidden-time2"><%= post.published_at.strftime("%Y%m%d")%></div>
+                  <img src="html_contents/<%= post.published_at.strftime("%Y%m%d")%>/<%=post.id%>.png" />
+                  <div class="slideContent">
+                    <h3><%= link_to post.title, "#", :onclick=>"newsClick(this.parentNode.parentNode.parentNode.parentNode);return false"%></h3>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
 
           </div>
 
           <div id="myController">
-           <% @posts.each do |post|%>
-             <span class="jFlowControl"><%= post.id%></span>
-          <% end %>
+            <% @posts.each do |post|%>
+              <span class="jFlowControl"><%= post.id%></span>
+            <% end %>
           </div>
 
           <div class="jFlowPrev"></div>
