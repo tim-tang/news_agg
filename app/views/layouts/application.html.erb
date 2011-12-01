@@ -44,9 +44,9 @@ hookUpMouseEvent();
             <div class="container-fluid">
               <%= link_to 'Everyday News {新鲜时讯}', root_path, :class=>"brand" %>
               <ul class="nav">
-                <li class="active"><%= link_to "主页", root_path%></li>
+                <li class="<%= highlight_home%>"><%= link_to "主页", root_path%></li>
                 <% @categories.each do |cate|%>
-                  <li><%= link_to cate.category, category_path(cate.category)%></li>
+                <li class="<%= highlight_nav(cate)%>"><%= link_to cate.category, category_path(cate.category)%></li>
                 <% end %>
               </ul>
               <p class="pull-right"><a href="http://tim.everyday-cn.com">联系我们</a></p>
