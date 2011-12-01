@@ -9,13 +9,11 @@
 #
 #require "crawler_engine"
 every 10.minute do
-  #command "rake crawler_start"
-  #runner "CrawlerEngine.start"
   rake "crawler_start"
 end
-#
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
+
+every 7.days do
+  rake "crawler_clear"
+end
 
 # Learn more: http://github.com/javan/whenever

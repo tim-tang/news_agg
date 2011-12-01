@@ -1,5 +1,4 @@
 require "crawler_engine"
-require "date"
 desc "Start crawler engine job"
 task :crawler_start do
   puts "Start crawlerEngine ....."
@@ -12,5 +11,5 @@ end
 desc "Clear history html files and images"
 task :crawler_clear do
   puts "Clear history data"
-  CrawlerEngine.start(Date.today -5)
+  CrawlerEngine.start(Time.now -(7*24*60*60))
 end
