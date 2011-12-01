@@ -16,6 +16,11 @@
 # Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/stock/hot_roll.xml',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
 
 # Source.create(:site_name=>'科技频道-新浪', :link=>'http://rss.sina.com.cn/tech/rollnews.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
+ Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1225833283.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+ Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1272933544.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+ Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1400565967.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+ Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1260849850.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+ Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1811480870.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
 
 # # ================= 163.com =======================
 # Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gn.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
