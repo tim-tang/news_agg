@@ -12,8 +12,21 @@
     <%= javascript_include_tag 'jflow.js' %>
     <%= csrf_meta_tag %>
     <script type="text/javascript">
-      $(document).ready(function(){
-          $("#myController").jFlow({
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23115957-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("#myController").jFlow({
 controller: ".jFlowControl", // must be class, use . sign
 slideWrapper : "#jFlowSlider", // must be id, use # sign
 slides: "#mySlides",  // the div where all your sliding divs are nested in
@@ -28,9 +41,9 @@ next: ".jFlowNext", // must be class, use . sign
 auto: true
 });
 
-hookUpMouseEvent();
-          });
-        </script>
+      hookUpMouseEvent();
+      });
+</script>
       </head>
       <style type="text/css">
         body {
@@ -46,7 +59,7 @@ hookUpMouseEvent();
               <ul class="nav">
                 <li class="<%= highlight_home%>"><%= link_to "主页", root_path%></li>
                 <% @categories.each do |cate|%>
-                <li class="<%= highlight_nav(cate)%>"><%= link_to cate.category, category_path(cate.category)%></li>
+                  <li class="<%= highlight_nav(cate)%>"><%= link_to cate.category, category_path(cate.category)%></li>
                 <% end %>
               </ul>
               <p class="pull-right"><a href="http://tim.everyday-cn.com">联系我们</a></p>
