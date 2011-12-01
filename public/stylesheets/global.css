@@ -23,6 +23,20 @@
   background-color:#fff;
 }
 
+.news-update-item {
+  padding: 5px 10px;
+  margin-top:5px;
+  border: solid 1px #fff;
+  border-radius: 6px;
+  /*border-bottom: 1px dashed #eee;
+   *     margin-bottom:5px;*/
+  padding-bottom:5px;
+  _padding-bottom:10px;; /*ie6*/
+  *padding-bottom:10px;; /*ie7+*/
+  min-height:70px;
+  background-color:#fff;
+}
+
 .preview_header {
   width:700px;
   height:22px;

@@ -51,8 +51,23 @@
  Source.create(:site_name=>'译言网', :link=>'http://feed.feedsky.com/yeeyan-business',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@id="conBox"]')
  Source.create(:site_name=>'译言网', :link=>'http://feed.feedsky.com/yeeyan-tech',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@id="conBox"]')
 
-# # =============== rayli ==================
-# Source.create(:site_name=>'瑞丽网', :link=>'http://www.rayli.com.cn/rss/0002.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@id="conBox"]')
+# # =============== berrytimes ==================
+ Source.create(:site_name=>'黑莓时光', :link=>'http://berrytimes.cn/feed',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="entry clear"]')
 
+# # =============== nfzm ==================
+ Source.create(:site_name=>'南方周末', :link=>'http://www.hifiwiki.net/news/rss/infzm.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="content-context"]')
 
+# # =============== lifeweek ==================
+ Source.create(:site_name=>'三联生活周刊', :link=>'http://www.hifiwiki.net/news/rss/lifeweek.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//td[@class="page"]')
 
+# # =============== the bund ==================
+ Source.create(:site_name=>'外滩画报', :link=>'http://blog.sina.com.cn/rss/THEBUND.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="articalContent"]')
+
+# # =============== lecia  ==================
+ Source.create(:site_name=>'Lecia中文摄影杂志', :link=>'http://feed.feedsky.com/leica',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@id="zoomtext"]')
+
+# # =============== ixiqi  ==================
+ Source.create(:site_name=>'爱...稀奇', :link=>'http://feeds2.feedburner.com/ixiqi?format=xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="PostContent"]')
+
+# # =============== dapenti ==================
+ Source.create(:site_name=>'喷嚏网', :link=>'http://www.dapenti.com/blog/rss2.asp?name=agile',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="PostContent"]')
