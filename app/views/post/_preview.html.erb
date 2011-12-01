@@ -5,7 +5,9 @@
       <span><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S")%></span> |
       <span class="label warning"><%= post.category%></span>
       <div class="nail">
-        <img class="span1" src=<%=post.thumbnail%> />
+        <% if post.thumbnail != nil&&post.thumbnail.include?("http://")%>
+          <%= image_tag "../html_contents/"+post.published_at.strftime("%Y%m%d")+"/"+post.id.to_s+".png", :class=>"span1"%>
+        <% end %>
       </div>
     </div>
     <div>
