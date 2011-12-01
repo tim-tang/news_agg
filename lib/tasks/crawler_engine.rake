@@ -11,5 +11,5 @@ end
 desc "Clear history html files and images"
 task :crawler_clear do
   puts "Clear history data"
-  CrawlerEngine.start(Time.now -(7*24*60*60))
+  CrawlerEngine.destroy(Time.now -(7*24*60*60))
 end

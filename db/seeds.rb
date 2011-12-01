@@ -11,16 +11,15 @@
 # Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/world/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
 # Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/china/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
 # Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/society/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
-
 # Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/finance/hot_roll.xml',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
 # Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/stock/hot_roll.xml',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
-
 # Source.create(:site_name=>'科技频道-新浪', :link=>'http://rss.sina.com.cn/tech/rollnews.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
- Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1225833283.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
- Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1272933544.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
- Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1400565967.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
- Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1260849850.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
- Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1811480870.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+
+# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1225833283.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1272933544.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1400565967.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1260849850.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
+# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1811480870.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
 
 # # ================= 163.com =======================
 # Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gn.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
@@ -48,7 +47,7 @@
  Source.create(:site_name=>'瘾科技', :link=>'http://cn.engadget.com/rss.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="postbody"]')
 
 # # =============== 21 ccom==================
-# Source.create(:site_name=>'共识网', :link=>'http://www.21ccom.net/plus/rss.php',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="contents"]')
+ Source.create(:site_name=>'共识网', :link=>'http://www.21ccom.net/plus/rss.php',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="contents"]')
 
 # # =============== yeeyan-tech ==================
  Source.create(:site_name=>'译言网', :link=>'http://feed.feedsky.com/yeeyan-culture',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="conBox"]')
@@ -60,13 +59,13 @@
  Source.create(:site_name=>'黑莓时光', :link=>'http://berrytimes.cn/feed',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="entry clear"]')
 
 # # =============== nfzm ==================
- Source.create(:site_name=>'南方周末', :link=>'http://www.hifiwiki.net/news/rss/infzm.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="content-context"]')
+# Source.create(:site_name=>'南方周末', :link=>'http://www.hifiwiki.net/news/rss/infzm.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="content-context"]')
 
 # # =============== lifeweek ==================
- Source.create(:site_name=>'三联生活周刊', :link=>'http://www.hifiwiki.net/news/rss/lifeweek.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//td[@class="page"]')
+# Source.create(:site_name=>'三联生活周刊', :link=>'http://www.hifiwiki.net/news/rss/lifeweek.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//td[@class="page"]')
 
 # # =============== the bund ==================
- Source.create(:site_name=>'外滩画报', :link=>'http://blog.sina.com.cn/rss/THEBUND.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="articalContent"]')
+# Source.create(:site_name=>'外滩画报', :link=>'http://blog.sina.com.cn/rss/THEBUND.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="articalContent"]')
 
 # # =============== lecia  ==================
  Source.create(:site_name=>'Lecia中文摄影杂志', :link=>'http://feed.feedsky.com/leica',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@id="zoomtext"]')
