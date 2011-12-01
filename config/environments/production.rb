@@ -20,6 +20,7 @@ NewsAgg::Application.configure do
 
   # See everything in the log (default is :info)
   # config.log_level = :debug
+  config.logger = Logger.new("#{Rails.root}/log/#{Rails.env}#{Date.today.to_s}.log", "daily")
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
