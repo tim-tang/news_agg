@@ -1,34 +1,4 @@
 # endcoding: utf-8
-## This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
-
-# ================= SINA.com =======================
-# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/world/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
-# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/china/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
-# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/society/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
-# Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/finance/hot_roll.xml',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
-# Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/stock/hot_roll.xml',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
-# Source.create(:site_name=>'科技频道-新浪', :link=>'http://rss.sina.com.cn/tech/rollnews.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerSblkCon"]')
-
-# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1225833283.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
-# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1272933544.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
-# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1400565967.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
-# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1260849850.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
-# Source.create(:site_name=>'新浪旅游', :link=>'http://blog.sina.com.cn/rss/1811480870.xml',:category=>'旅游美食',:crawled_at=>Time.now, :filter=>'//div[@id="sina_keyword_ad_area2"]')
-
-# # ================= 163.com =======================
-# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gn.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
-# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gj.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
-# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_war.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
-# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_sh.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
-# Source.create(:site_name=>'网易科技', :link=>'http://tech.163.com/special/000944OI/headlines.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
-# Source.create(:site_name=>'网易科技', :link=>'http://tech.163.com/special/000944OI/kejiyejie.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
-
  # ================= ifeng.com =====================
  Source.create(:site_name=>'凤凰网', :link=>'http://news.ifeng.com/rss/world.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="artical_real"]')
  Source.create(:site_name=>'凤凰网', :link=>'http://news.ifeng.com/rss/society.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="articial_real"]')
@@ -58,15 +28,6 @@
 # # =============== berrytimes ==================
  Source.create(:site_name=>'黑莓时光', :link=>'http://berrytimes.cn/feed',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="entry clear"]')
 
-# # =============== nfzm ==================
-# Source.create(:site_name=>'南方周末', :link=>'http://www.hifiwiki.net/news/rss/infzm.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="content-context"]')
-
-# # =============== lifeweek ==================
-# Source.create(:site_name=>'三联生活周刊', :link=>'http://www.hifiwiki.net/news/rss/lifeweek.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//td[@class="page"]')
-
-# # =============== the bund ==================
-# Source.create(:site_name=>'外滩画报', :link=>'http://blog.sina.com.cn/rss/THEBUND.xml',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="articalContent"]')
-
 # # =============== lecia  ==================
  Source.create(:site_name=>'Lecia中文摄影杂志', :link=>'http://feed.feedsky.com/leica',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@id="zoomtext"]')
 
@@ -75,3 +36,13 @@
 
 # # =============== dapenti ==================
  Source.create(:site_name=>'喷嚏网', :link=>'http://www.dapenti.com/blog/rss2.asp?name=agile',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="PostContent"]')
+
+# # =============== Mtime ==================
+ Source.create(:site_name=>'Mtime时光网', :link=>'http://feed.mtime.com/news.rss',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="p15 px14 lh18 news_conters"]')
+
+# # =============== jiaren ==================
+ Source.create(:site_name=>'佳人', :link=>'http://jiaren.org/feed/',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="entry narrow clearfloat bigger"]')
+
+# # =============== adfuns ==================
+ Source.create(:site_name=>'广告放肆', :link=>'http://feed.feedsky.com/digiart',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="textbox-content"]')
+
