@@ -1,4 +1,32 @@
 # endcoding: utf-8
+
+# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/world/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerPblk"]')
+# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/china/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerPblk"]')
+# Source.create(:site_name=>'新闻中心-新浪', :link=>'http://rss.sina.com.cn/news/society/focus15.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerPblk"]')
+# Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/finance/hot_roll.xml',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerPblk"]')
+# Source.create(:site_name=>'财经频道-新浪', :link=>'http://rss.sina.com.cn/roll/stock/hot_roll.xml',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerPblk"]')
+# Source.create(:site_name=>'科技频道-新浪', :link=>'http://rss.sina.com.cn/tech/rollnews.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@class="blkContainerPblk"]')
+
+# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gn.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_gj.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_war.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易新闻', :link=>'http://news.163.com/special/00011K6L/rss_sh.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易科技', :link=>'http://tech.163.com/special/000944OI/headlines.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+# Source.create(:site_name=>'网易科技', :link=>'http://tech.163.com/special/000944OI/kejiyejie.xml',:category=>'科技电子',:crawled_at=>Time.now, :filter=>'//div[@id="endText"]')
+
+# # =============== online.sh ==================
+# Source.create(:site_name=>'上海热线', :link=>'http://news.online.sh.cn/news/gb/node/RSS.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="text"]')
+# Source.create(:site_name=>'上海热线', :link=>'http://news.online.sh.cn/news/gb/special/news.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@class="text"]')
+# Source.create(:site_name=>'上海热线', :link=>'http://rich.online.sh.cn/rich/gb/special/rich.xml',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@class="text"]')
+
+# # =============== tom ==================
+ Source.create(:site_name=>'TOM', :link=>'http://rss.tom.com/file/social_qishi.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="content_body"]')
+ Source.create(:site_name=>'TOM', :link=>'http://rss.tom.com/file/news_china.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="content_body"]')
+ Source.create(:site_name=>'TOM', :link=>'http://rss.tom.com/file/news_huabian.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="content_body"]')
+ Source.create(:site_name=>'TOM', :link=>'http://rss.tom.com/file/discovery_daqian.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="content_body"]')
+
+# # =============== eastday ==================
+ #Source.create(:site_name=>'东方新闻', :link=>'http://rss.eastday.com/china.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="zw"]')
  # ================= ifeng.com =====================
  Source.create(:site_name=>'凤凰网', :link=>'http://news.ifeng.com/rss/world.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="artical_real"]')
  Source.create(:site_name=>'凤凰网', :link=>'http://news.ifeng.com/rss/society.xml',:category=>'时政社会',:crawled_at=>Time.now, :filter=>'//div[@id="articial_real"]')
@@ -45,4 +73,9 @@
 
 # # =============== adfuns ==================
  Source.create(:site_name=>'广告放肆', :link=>'http://feed.feedsky.com/digiart',:category=>'生活时尚',:crawled_at=>Time.now, :filter=>'//div[@class="textbox-content"]')
+
+# # =============== ibtimes ==================
+ Source.create(:site_name=>'国际财经时报', :link=>'http://www.ibtimes.com.cn/rss/feed/asiapacific.rss',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@id="bodytext2"]')
+ Source.create(:site_name=>'国际财经时报', :link=>'http://www.ibtimes.com.cn/rss/feed/europe.rss',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@id="bodytext2"]')
+ Source.create(:site_name=>'国际财经时报', :link=>'http://www.ibtimes.com.cn/rss/feed/worldwide.rss',:category=>'财经股票',:crawled_at=>Time.now, :filter=>'//div[@id="bodytext2"]')
 
